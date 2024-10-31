@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: radial-gradient(circle at center, lightblue, white, violet, lightblue);
+    background-size: 200% 200%;
+    animation: rainbow 40s linear infinite;
+}
+
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+
+.navbar {
+    background-color: #3bc1ff;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.theme-toggle {
+    top: 1rem;
+    right: 1rem;
+    background-color: #3bc1ff00;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar i {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: 2px;
+
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.nav-item a {
+    color: white;
+
+}
+
+/* Basic setup for truck icon and smoke */
+.navbar-brand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.smoke {
+    position: absolute;
+    top: 50%;
+    /* Adjust as necessary */
+    left: 4%;
+    /* Position to the right of the truck */
+    width: 10px;
+    height: 10px;
+    background-color: rgba(128, 128, 128, 0.7);
+    /* Grey smoke */
+    border-radius: 50%;
+    opacity: 0;
+    animation: puff 1.5s infinite ease-in-out;
+}
+
+.smoke2 {
+    animation-delay: 0.2s;
+}
+
+.smoke3 {
+    animation-delay: .04s;
+}
+
+/* Keyframe animation for the smoke effect */
+@keyframes puff {
+    0% {
+        transform: scale(0.5) translate(0, 0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.2) translate(-20px, -20px);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1.8) translate(-40px, -40px);
+        opacity: 0;
+    }
+}
+
+
+@media (min-width: 1281px) {
+    .navbar-nav {
+        margin-left: 30%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+.Section2 {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2px;
+}
+
+.scripts, .categorizer, .vocabulary, .payout {
+
+    border: 2px solid rgb(112, 112, 112);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(79, 85, 79, 0.1);
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    height: auto;
+}
+
+.Section2 h1, h2 {
+    font-weight: 400;
+}
+
+.Section2 label,
+.Section3 label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.Section2 input,
+.Section2 select,
+.Section3 input,
+.Section3 select {
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Section2 button,
+.Section3 button {
+    background-color: #3bc1ff;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Section2 button:hover,
+.Section3 button:hover {
+    background-color: #3bc1ff;
+}
+
+.Section3 {
+    margin: 2px;
+
+}
+
+.Sectionswiper {
+    width: 100%;
+    height: 70vh;
+}
+.carousel-inner {
+    min-width: 600px;
+    /* Same as viewport width */
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+}
+
+  /* Modal styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%; /* Responsive */
+    max-height: 90%; /* Responsive */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.courtesy, .notas-container {
+
+    border: 2px solid rgb(112, 112, 112);
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 1, 0, 0.1);
+    font-size: 15px;
+    text-align: center;
+}
+
+.courtesy {
+    max-height: 500px;
+}
+
+
+
+#editor {
+    border: 2px solid #ccc;
+    /* Borde del cuadro */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Barra de desplazamiento si el contenido es demasiado alto */
+    background-color: #fff;
+    /* Color de fondo del cuadro */
+    transition: border-color 0.3s;
+    /* Transición suave para el borde */
+}
+
+
+
+
+.note {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Evita que el contenido se desborde */
+    word-wrap: break-word;
+    /* Permite que las palabras largas se dividan */
+    max-height: 150px;
+    /* Establece una altura máxima para la nota */
+    overflow-y: auto;
+    /* Muestra una barra de desplazamiento si el contenido es demasiado alto */
+}
+
+.note p {
+    font-size: 14px;
+}
+
+.note button {
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botonScrollTop {
+    /* hacemos que el boton scroll top se mantenga fijo mientras se hace scroll  */
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background-color: #797979;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos del footer */
+.seccionfooter {
+    background-color: rgb(29, 29, 29);
+    height: 30px;
+}
+
+/* Estilos para los párrafos en el footer */
+.seccionfooter p {
+    color: #ffffff;
+    margin: 1px;
+    text-align: center;
+}

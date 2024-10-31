@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <!----Creado por Sebastian Navarro-->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tu hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <header id="header" class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"> <i class="fa-solid fa-truck-moving"></i>
+                </a>
+                <div class="smoke"></div>
+                <div class="smoke smoke2"></div>
+                <div class="smoke smoke3"></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="https://roadie.lightning.force.com/lightning/r/Knowledge__kav/ka05c000001HusVAAS/view"
+                                target="_blank">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://support.roadie.com/support/s/article/How-Does-Instant-Pay-Work"
+                                target="_blank">Instant Pay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://roadie.lightning.force.com/lightning/r/Knowledge__kav/ka05c000001HusVAAS/view"
+                                target="_blank">High Volume Senders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://roadie.lightning.force.com/lightning/r/Knowledge__kav/ka05c000001HuvZAAS/view"
+                                target="_blank">Recoveries and Claims</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#categorizer">Item Size Categorizer</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#notes">Notes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Cuerpo de la página -->
+
+
+    <section id="scripts" class="container-fluid Section2">
+        <div class="col-md-3 scripts  ">
+            <h1>Inbound</h1>
+            <p>Hi! Thank you for contacting Roadie Support. My name is AGENT, how can I help you today?</p>
+            <h1>Outbound</h1>
+            <p>Hello! This is AGENT from Roadie Support, giving you a callback as requested on a recorded line. How can
+                I help you today?</p>
+            <h1>Recipient</h1>
+            <p>Hello! This is AGENT from Roadie Support, calling you from a recorded line.</p>
+            <h1>Voicemail</h1>
+            <p>Hello, this is AGENT from Roadie Support giving you a call back as requested. Please give us a call at
+                470-785-9787 or email us at support@roadie.com. Have a great day!</p>
+        </div>
+        <div id="categorizer" class="col-md-3 categorizer  ">
+            <h1>Item Size Categorizer</h1>
+            <form id="itemForm">
+                <label for="tableSelect">Select Table:</label>
+                <select id="tableSelect" required>
+                    <option value="">--Select a Table--</option>
+                    <option value="Best Buy">Best Buy</option>
+                    <option value="Tractor Supply Company">Tractor Supply Company</option>
+                    <option value="Discount Tire">Discount Tire</option>
+                    <option value="At Home">At Home</option>
+                    <option value="BJ's Wholesale Club">BJ's Wholesale Club</option>
+                    <option value="Home Depot">Home Depot</option>
+                </select><br><br>
+
+                <label for="length">Length (in inches):</label>
+                <input type="number" id="length" name="length" required><br><br>
+
+                <label for="width">Width (in inches):</label>
+                <input type="number" id="width" name="width" required><br><br>
+
+                <label for="height">Height (in inches):</label>
+                <input type="number" id="height" name="height" required><br><br>
+
+                <label for="itemWeight">Item Weight (in lbs):</label>
+                <input type="number" id="itemWeight" name="itemWeight" required><br><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required><br><br>
+
+                <button type="button" onclick="categorizeItem()">Categorize Item</button>
+            </form>
+
+            <h2 id="result"></h2>
+        </div>
+        <div class="col-md-3 vocabulary  ">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">A - Alpha</li>
+                        <li class="list-group-item">B - Bravo</li>
+                        <li class="list-group-item">C - Charlie</li>
+                        <li class="list-group-item">D - Delta</li>
+                        <li class="list-group-item">E - Echo</li>
+                        <li class="list-group-item">F - Foxtrot</li>
+                        <li class="list-group-item">G - Golf</li>
+                        <li class="list-group-item">H - Hotel</li>
+                        <li class="list-group-item">I - India</li>
+                        <li class="list-group-item">J - Juliet</li>
+                        <li class="list-group-item">K - Kilo</li>
+                        <li class="list-group-item">L - Lima</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">M - Mike</li>
+                        <li class="list-group-item">N - November</li>
+                        <li class="list-group-item">O - Oscar</li>
+                        <li class="list-group-item">P - Papa</li>
+                        <li class="list-group-item">Q - Quebec</li>
+                        <li class="list-group-item">R - Romeo</li>
+                        <li class="list-group-item">S - Sierra</li>
+                        <li class="list-group-item">T - Tango</li>
+                        <li class="list-group-item">U - Uniform</li>
+                        <li class="list-group-item">V - Victor</li>
+                        <li class="list-group-item">W - Whiskey</li>
+                        <li class="list-group-item">X - X-Ray</li>
+                        <li class="list-group-item">Y - Yankee</li>
+                        <li class="list-group-item">Z - Zulu</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-3 payout">
+            <h1>Payout Adjustment</h1>
+            <form id="payoutForm">
+                <label for="originalSize">Original Size:</label>
+                <select id="originalSize" name="originalSize" required>
+                    <option value="Small/Medium">Small/Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Extra Large">Extra Large</option>
+                </select><br><br>
+
+                <label for="updatedSize">Updated Size:</label>
+                <select id="updatedSize" name="updatedSize" required>
+                    <option value="Large">Large</option>
+                    <option value="Extra Large">Extra Large</option>
+                    <option value="Huge">Huge</option>
+                </select><br><br>
+
+                <label for="distance">Distance (in miles):</label>
+                <input type="number" id="distance" name="distance" required><br><br>
+
+                <button type="button" onclick="calculatePayout()">Calculate Payout Adjustment</button>
+            </form>
+            <h2 id="payoutResult"></h2>
+
+        </div>
+    </section>
+    <section class="Sectionswiper">
+
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="pause">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" onclick="openModal('img/img1.jpeg')">
+                    <img src="img/img1.jpeg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item" onclick="openModal('img/img2.jpeg')">
+                    <img src="img/img2.jpeg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item" onclick="openModal('img/img3.jpeg')">
+                    <img src="img/img3.jpeg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Modal for image preview -->
+        <div class="modal" id="imageModal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Image Preview">
+        </div>
+
+
+    </section>
+
+
+    <section id="payout-adjustment" class="container-fluid Section3 ">
+        <div class="row ">
+
+            <div class="col-md-4 courtesy">
+                <h2>Courtesy</h2>
+                <p>
+                    $4 for Small, Medium, and Large Gigs <br>
+                    $6 for XL Gigs <br>
+                    $8 for Huge Gigs
+                </p>
+
+
+                <h2>Adjustment for Finalized Mis-sized Gigs</h2>
+                <ul>
+                    <li>Medium Gig that should have been a Large - add $2</li>
+                    <li>Large Gig that should have been an XL - add $15</li>
+                    <li>Medium Gig that should have been an XL - add $17</li>
+                    <li>Large Gig that should have been a Huge - add $25</li>
+                    <li>XL Gig that should have been a Huge - add $20</li>
+                </ul>
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div id="notes" class="col-md-4 notas-container">
+                <h1>Bloc de Notas</h1>
+
+                <!-- Botones de formato -->
+                <div>
+                    <button onclick="document.execCommand('bold');">Negrita</button>
+                    <button onclick="document.execCommand('italic');">Cursiva</button>
+                    <button onclick="document.execCommand('underline');">Subrayado</button>
+                </div>
+
+                <div id="editor" contenteditable="true" placeholder="Escribe tu nota aquí..."></div>
+                <button onclick="agregarNota()">Agregar Nota</button>
+
+                <div id="listaNotas"></div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <a href="#scripts">
+        <div class="botonScrollTop">
+            <i class="fas fa-angle-up"></i>
+        </div>
+    </a>
+    <!-- Footer -->
+    <footer class="container-fluid seccionfooter">
+        <div>
+
+            <p>This is not an offcial tool</p>
+        </div>
+    </footer>
+    <!-- Fin del footer -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Updated to full version -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Use Bootstrap 4 if needed -->
+    <script src="https://kit.fontawesome.com/85576dcff4.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
